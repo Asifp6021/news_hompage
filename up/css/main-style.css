@@ -227,6 +227,9 @@ button {
   gap: 0.5rem;
 }
 
+.articles {
+  margin-top: 2.5rem;
+}
 .articles__content {
   gap: 2rem;
 }
@@ -275,9 +278,6 @@ button {
   }
   .newsHero__content--sec2 span {
     display: inline-block;
-  }
-  .articles {
-    margin-top: 2rem;
   }
   .articles__content {
     display: grid;
