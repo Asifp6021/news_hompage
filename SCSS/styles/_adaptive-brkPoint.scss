@@ -1,0 +1,304 @@
+@use './colors' as clr;
+@use './typographyes' as type;
+
+@media screen and (min-width: 500px) {
+	// utitlity class-------------------------
+
+	.txt {
+		font-size: type.fs(mcc);
+	}
+
+	.padd {
+		padding: 1.5rem 1.5rem;
+	}
+
+	// header--------------------------------------------
+
+	.header {
+		padding-top: 1.5rem;
+		&__content {
+			&--nav {
+				width: 40%;
+			}
+		}
+	}
+
+	// .newsHero------------------------------------------------
+
+	.desktop-img {
+		display: block;
+	}
+	.newsHero {
+		&__content {
+			gap: 3rem;
+
+			img:first-child {
+				display: none;
+			}
+
+			&--sec2 {
+				gap: 1.5rem;
+
+				span {
+					display: inline-block;
+				}
+			}
+		}
+	}
+
+	// articles--------------------------------------------
+	.articles {
+		margin-top: 2rem;
+		&__content {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(2, min-content);
+			gap: 2rem;
+
+			&--one {
+				gap: 1rem;
+				flex-direction: column;
+
+				img {
+					max-width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+
+				&-desc {
+					gap: 0.5rem;
+				}
+			}
+
+			article:nth-child(2) {
+				img {
+					max-width: 100%;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 800px) {
+	// utitlity class-------------------------
+
+	.txt {
+		font-size: type.fs(sc);
+		color: clr.clrs(Dark-grayish-blue);
+	}
+
+	.para-txt {
+		font-size: type.fs(sc);
+	}
+
+	.overlay::before {
+		content: none;
+	}
+
+	.padd {
+		padding: 1.5rem 2.5rem;
+	}
+
+	.new-subTitle,
+	.sec-subTitle-num {
+		font-size: type.fs(m);
+	}
+
+	.new-para {
+		font-size: type.fs(sc);
+	}
+
+	.sec-subTitle {
+		font-size: type.fs(mcc);
+	}
+
+	// header--------------------------------------------
+
+	.header {
+		&__content {
+			&--logo {
+				width: 6rem;
+				height: 4rem;
+			}
+
+			&--open {
+				display: none;
+			}
+			&--nav {
+				width: 40%;
+				position: static;
+				transform: none;
+				transition: none;
+				height: auto;
+				padding: 0;
+				width: 100%;
+				gap: 8rem;
+				background: none;
+
+				&-links {
+					flex-direction: row;
+					align-self: flex-end;
+					gap: 3rem;
+					padding: 0 0;
+				}
+
+				&-close {
+					display: none;
+				}
+			}
+		}
+	}
+
+	.newsHero {
+		&__content {
+			&--sec2 {
+				&-title {
+					font-size: type.fs(lc);
+				}
+
+				&-two {
+					button {
+						font-size: type.fs(sc);
+					}
+				}
+			}
+
+			&--sec3 {
+				gap: 2.5rem;
+				padding: 2rem;
+
+				&-title {
+					font-size: type.fs(mc);
+				}
+
+				&-new {
+					gap: 3rem;
+
+					& div:first-child,
+					& div:nth-child(2) {
+						padding-bottom: 2.5rem;
+					}
+				}
+			}
+		}
+	}
+
+	// article ------------------------------------
+}
+
+@media screen and (min-width: 1000px) {
+	.articles {
+		&__content {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	// utitlity class-------------------------
+
+	.padd {
+		padding: 2rem 2.5rem;
+	}
+
+	// header--------------------------------------------
+
+	.header {
+		padding-top: 3rem;
+		&__content {
+			&-links {
+				gap: 3rem;
+			}
+		}
+	}
+
+	// newsHero--------------------------------------------
+
+	.newsHero {
+		line-height: 1.7;
+		&__content {
+			display: grid;
+			grid-template-columns: repeat(11, 1fr);
+			grid-template-rows: repeat(15, min-content);
+			gap: 2rem;
+			row-gap: 3rem;
+
+			&--img {
+				grid-column: 1 / 9;
+				grid-row: 1 / 14;
+			}
+
+			&--sec2 {
+				grid-column: 1 / 9;
+				grid-row: 14 / -1;
+
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+
+				&-title {
+					display: none;
+				}
+
+				&-title-two {
+					display: block;
+					font-size: 5rem;
+					line-height: 1.1;
+
+					font-weight: type.fw(bold);
+					grid-column: 1 / 3;
+
+					span {
+						display: block;
+					}
+				}
+
+				&-two {
+					grid-column: 3 / -1;
+					gap: 3rem;
+
+					button {
+						padding: 1.5rem 3rem;
+					}
+				}
+			}
+
+			&--sec3 {
+				grid-column: 9 / -1;
+				grid-row: 1 / -1;
+				margin-top: 0;
+
+				&-title {
+					font-size: type.fs(lc);
+				}
+			}
+		}
+	}
+
+	// articles--------------------------------------------
+	.articles {
+		&__content {
+			flex-direction: row;
+			justify-content: space-between;
+			&--one {
+				flex-direction: row;
+
+				img {
+					max-width: 10rem;
+					height: 100%;
+					object-fit: cover;
+				}
+
+				&-desc {
+					gap: 0.5rem;
+				}
+			}
+
+			article:nth-child(2) {
+				img {
+					max-width: 10rem;
+					max-height: 100%;
+				}
+			}
+		}
+	}
+}
